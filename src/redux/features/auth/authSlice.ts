@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { getGlobalState } from '../../../utils/getGloabal';
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { getGlobalState } from "../../../utils/getGloabal";
 
 interface User {
   id: string;
@@ -13,7 +13,7 @@ interface AuthState {
   isAuth: boolean;
   user: User | null;
   role: string;
-  device: 'MOBILE' | 'DESKTOP';
+  device: "MOBILE" | "DESKTOP";
   collapsed: boolean;
   newUser: boolean;
 }
@@ -22,12 +22,12 @@ const initialState: AuthState = {
   isAuth: false,
   ...getGlobalState(),
   user: null,
-  role: '',
-  newUser: JSON.parse(localStorage.getItem('newUser')!) ?? true,
+  role: "",
+  newUser: JSON.parse(localStorage.getItem("newUser")!) ?? true,
 };
 
 const authSlice = createSlice({
-  name: 'auth',
+  name: "auth",
   initialState,
   reducers: {
     login(state, _action) {

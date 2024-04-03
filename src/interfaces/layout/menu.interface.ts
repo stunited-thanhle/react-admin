@@ -6,6 +6,6 @@ interface MenuItem {
   children?: MenuItem[];
 }
 
-export type MenuChild = Omit<MenuItem, 'children'>;
+export type MenuChild = Omit<MenuItem, "children">;
 
 export type MenuList = MenuItem[];

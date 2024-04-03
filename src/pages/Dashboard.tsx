@@ -2,7 +2,6 @@ import { useGetAccounts } from "@/hooks/useUser";
 
 const Dashboard = () => {
   const { data, isLoading } = useGetAccounts();
-
   return (
     <>
       {isLoading ? (
