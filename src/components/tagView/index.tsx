@@ -64,7 +64,7 @@ const TagsView: FC = () => {
   }, [dispatch, location.pathname, menuList]);
 
   return (
-    <div id='pageTabs' style={{ padding: "6px 6px 6px 15px" }}>
+    <div id='pageTabs' style={{ padding: "6px" }}>
       <Tabs
         tabBarStyle={{ margin: 0 }}
         onChange={onChange}

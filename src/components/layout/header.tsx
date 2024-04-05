@@ -4,7 +4,8 @@ import { FC } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { useTranslation } from "react-i18next";
-import { dark, light } from "../../assets";
+import { ReactComponent as MoonSvg } from "../../assets/header/ic_moon.svg";
+import { ReactComponent as SunSvg } from "../../assets/header/ic_sun.svg";
 import { ReactComponent as LanguageSvg } from "../../assets/header/language.svg";
 import i18n from "../../config/i18n";
 import { STORAGE_KEY } from "../../constants/enum";
@@ -23,7 +24,6 @@ interface HeaderProps {
 
 const HeaderComponent: FC<HeaderProps> = ({ collapsed, toggle }) => {
   const { theme } = useSelector((state: RootState) => state.global);
-  const { device } = useSelector((state: RootState) => state.auth);
   //   const navigate = useNavigate();
   const token = antTheme.useToken();
   const dispatch = useDispatch();
@@ -66,15 +66,6 @@ const HeaderComponent: FC<HeaderProps> = ({ collapsed, toggle }) => {
       className='layout-page-header bg-2'
       style={{ backgroundColor: token.token.colorBgContainer }}
     >
-      {device !== "MOBILE" && (
-        <div className='logo' style={{ width: collapsed ? 80 : 200 }}>
-          <img
-            width={30}
-            src='https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg'
-            alt=''
-          />
-        </div>
-      )}
       <div className='layout-page-header-main'>
         <div onClick={toggle}>
           <span id='sidebar-trigger'>
@@ -84,7 +75,7 @@ const HeaderComponent: FC<HeaderProps> = ({ collapsed, toggle }) => {
         <div className='actions'>
           <Tooltip title={t("MENU.SWITCH_THEME")}>
             <span onClick={onChangeTheme} style={{ cursor: "pointer" }}>
-              <img src={theme === "dark" ? light : dark} alt='' />
+              {theme === "dark" ? <SunSvg /> : <MoonSvg />}
             </span>
           </Tooltip>
           <Dropdown

@@ -1,12 +1,13 @@
 .layout-page {
   height: 100vh;
   &-header {
+    border-left: 0.5px solid rgb(235, 235, 235);
     padding: 0 !important;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 9;
-    box-shadow: 0 1px 6px #dddddd;
+    box-shadow: 0px 15px 10px -15px #dddddd;
 
     svg {
       width: 20px;
@@ -102,6 +103,11 @@ body[theme-mode="dark"] {
   .layout-page-header {
     box-shadow: none;
   }
+  .layout-page {
+    &-header {
+      border-left: 0.5px solid rgb(41, 36, 36);
+    }
+  }
 }
 
 .layout-page-sider-menu {
@@ -190,4 +196,12 @@ body[theme-mode="dark"] {
   &:hover {
     color: #1890ff;
   }
+}
+
+.demo-logo-vertical {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  box-sizing: border-box;
 }

@@ -24,5 +24,9 @@ module.exports = {
         ignoreRestSiblings: true,
       },
     ],
+    "eol-last": ["error", "always"],
+    "no-console": 2,
+    "no-trailing-spaces": "error",
+    "no-multiple-empty-lines": "error",
   },
 };

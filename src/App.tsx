@@ -64,8 +64,11 @@ function App() {
             Typography: {
               colorPrimary: "black",
             },
+            // Layout: {
+            //   colorBgLayout: theme === "dark" ? "red" : "#f5f5f5",
+            // },
           },
-          token: { colorPrimary: "#13c2c2" },
+          token: { colorPrimary: "#13c2c2", fontFamily: "Roboto, sans-serif" },
           algorithm: theme === "dark" ? antdTheme.darkAlgorithm : antdTheme.defaultAlgorithm,
         }}
       >

@@ -1,12 +1,13 @@
 import type { FC } from "react";
 
-import { SettingOutlined } from "@ant-design/icons";
 import { Dropdown } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 
 import { useTranslation } from "react-i18next";
+import { ReactComponent as SettingSvg } from "../../assets/header/setting.svg";
 import { removeAllTag, removeOtherTag, removeTag } from "../../redux/features/tagView/tagViewSlice";
 import { RootState } from "../../redux/store";
+import "./tagview.scss";
 
 const TagsViewAction: FC = () => {
   const { activeTagId } = useSelector((state: RootState) => state.tagsView);
@@ -44,9 +45,9 @@ const TagsViewAction: FC = () => {
         ],
       }}
     >
-      <span id='pageTabs-actions'>
-        <SettingOutlined className='tagsView-extra' />
-      </span>
+      <div id='pageTabs-actions'>
+        <SettingSvg className='rotate' />
+      </div>
     </Dropdown>
   );
 };
