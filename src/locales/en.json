@@ -7,5 +7,12 @@
     "CLOSE_OTHER": "Close other",
     "COLOSE_ALL": "Close all",
     "SWITCH_THEME": "Switch theme"
+  },
+  "TABLE": {
+    "EMPTY": "Empty",
+    "ACTIONS": "Actions",
+    "TOTAL_PAGE": "Total pages: {{total}}",
+    "DISPLAY": "Display",
+    "ITEM": "items"
   }
 }
