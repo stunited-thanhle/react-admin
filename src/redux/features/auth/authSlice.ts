@@ -19,7 +19,7 @@ interface AuthState {
 }
 
 const initialState: AuthState = {
-  isAuth: false,
+  isAuth: localStorage.getItem("token") ? true : false,
   ...getGlobalState(),
   user: null,
   role: "",

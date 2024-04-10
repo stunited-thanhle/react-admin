@@ -2,6 +2,7 @@
 import { ConfigProvider, Spin, theme as antdTheme } from "antd";
 import { Suspense, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { AuthProvider } from "./guards/AuthProvider";
 import { MenuChild, MenuList } from "./interfaces/layout/menu.interface";
 import { setGlobalState, setMenuList } from "./redux/features/global/globalSlice";
 import { RootState } from "./redux/store";
@@ -78,7 +79,9 @@ function App() {
       >
         <HistoryRouter history={history}>
           <Suspense fallback={<Spin />}>
-            <Router />
+            <AuthProvider>
+              <Router />
+            </AuthProvider>
           </Suspense>
         </HistoryRouter>
       </ConfigProvider>

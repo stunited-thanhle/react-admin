@@ -1,3 +1,6 @@
+import AuthGuard from "@/guards/AuthGuard";
+import GuestGuard from "@/guards/GuestGuard";
+import { Login } from "@/pages/Login";
 import { lazy } from "react";
 import { Navigate, useRoutes } from "react-router-dom";
 import LayoutPage from "../components/layout";
@@ -7,11 +10,19 @@ const Router = () => {
   return useRoutes([
     {
       path: "sign-in",
-      element: <div>Login</div>,
+      element: (
+        <GuestGuard>
+          <Login />
+        </GuestGuard>
+      ),
     },
     {
       path: "/",
-      element: <LayoutPage />,
+      element: (
+        <AuthGuard>
+          <LayoutPage />
+        </AuthGuard>
+      ),
       children: [
         {
           path: "",
